@@ -52,8 +52,9 @@ class Login extends CI_Controller{
             if(count($userLogado) == 1){
                 $dadosSessao = array(
                     'userLogado' => $userLogado[0],
-                    'logado' => TRUE,
-                    'img' => userLogado['img']
+                    'logado' => TRUE
+                    /*,
+                    'img' => userLogado('img')*/
                 );
                 $this->session->set_userdata($dadosSessao);
                 redirect(base_url('admin/home'));
