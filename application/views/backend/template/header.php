@@ -27,13 +27,19 @@
 	<link href="<?php echo base_url('assets/backend/css/materialize.css')?>" rel="stylesheet" />
 
     <link href="<?php echo base_url('assets/backend/css/datatable.css')?>" rel="stylesheet" />
-
+	<link href="<?php echo base_url('assets/backend/css/bootstrap-select.css')?>" rel="stylesheet" />
+	
 	<!-- dropzone-->
 	<link href="<?php echo base_url('assets/backend/plugins/dropzone/dropzone.css')?>" rel="stylesheet" />
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- Jquery Core Js -->
 	<script src="<?php echo base_url('assets/backend/plugins/jquery/jquery.min.js')?>"></script>
 	<script src="<?php echo base_url('assets/backend/js/jqueryForm.min.js')?>"></script>
+	
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	
+
 </head>
 
 <body class="theme-blue">

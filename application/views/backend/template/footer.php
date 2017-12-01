@@ -18,6 +18,7 @@
 <script src="<?php echo base_url('assets/backend/js/pages/tables/jszip.min.js')?>"></script>
 <script src="<?php echo base_url('assets/backend/js/pages/tables/vfs_fonts.js')?>"></script>
 <script src="<?php echo base_url('assets/backend/js/pages/tables/buttons.html5.min.js')?>"></script>
+<script src="<?php echo base_url('assets/backend/js/bootstrap-select.js')?>"></script>
 </body>
 
 </html>

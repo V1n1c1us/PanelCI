@@ -21,7 +21,7 @@
                 <ul class="list">
                     <li class="header">NAVEGAÇÃO PRINCIPAL</li>
                     <li class="active">
-                        <a href="#">
+                        <a href="<?php echo base_url('admin/home/');?>">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
@@ -41,23 +41,11 @@
                             <li>
                             <a href="<?php echo base_url('admin/cliente/');?>">Cliente</a>
                             </li>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="<?php base_url('admin/usuario/addUser');?>">Usuário</a>
-                                    </li>
-                                    <li>
-                                        <a href="/promocoes">Promoção</a>
-                                    </li>
-                                    <li>
-                                        <a href="/pizzas">Pizza</a>
-                                    </li>
-                                    <li>
-                                        <a href="/sabores">Sabor</a>
-                                    </li>
-                                    <li>
-                                        <a href="/mesas">Mesa</a>
-                                    </li>
-                                </ul>
+                            <li>
+                            <a href="<?php echo base_url('admin/cliente/listaClientes');?>">Listar Clientes</a>
+                            </li>
+                            <li>
+                            <a href="<?php echo base_url('admin/propriedade/');?>">Propriedade</a>
                             </li>
                             <li>
                                 <a href="javascript:void(0);" class="menu-toggle">

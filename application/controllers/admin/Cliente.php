@@ -41,6 +41,25 @@ class Cliente extends CI_Controller {
 
     }
 
+    public function listaClientes(){
+        
+                $this->load->library('table');
+                
+                $dados = array(
+                    'title' => 'Painel Administrativo',
+                    'titleTable' => 'Clientes Cadastrados',
+                    'boasVindas' => 'Bem Vindo!',
+                    'version' => '1.0.0',
+                    'clientes' => $this->modelCliente->listar_clientes()
+                    );
+        
+                $this->load->view('backend/template/header', $dados);
+                $this->load->view('backend/template/aside-left');
+                $this->load->view('backend/listaClientes');
+                $this->load->view('backend/template/footer');
+        
+            }
+
 }
 
 /* End of file Cliente.php */
