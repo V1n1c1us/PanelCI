@@ -34,12 +34,12 @@ class Usuario_model extends CI_Model {
          $this->db->where('id', $id);
         return $this->db->get('usuario')->result();
     }
-    public function cadastra($nome, $email, $user, $senha, $foto){
+    public function cadastra($nome, $email, $user, $senha){ //, $foto
          $dados['nome'] = $nome; //titulo que vem do fomr na posição título, coluna da tab categoria
          $dados['email'] = $email;
          $dados['user'] = $user;
          $dados['senha'] = $senha;
-         $dados['img'] = $foto;
+         //$dados['img'] = $foto;
          //$dados['img'] = $filePath;
         return $this->db->insert('usuario',$dados); //insere na tabela todos os dados dentro da var $dados
     }

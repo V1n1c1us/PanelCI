@@ -11,7 +11,7 @@
 					<div class="row clearfix">
 						<!--<?php echo form_open_multipart('admin/cliente/insert');
                     ?>-->
-						<form method="post" enctype="multipart/form-data" id="formulario_cadastro">
+						<form method="post" enctype="multipart/form-data" id="formulario_cadastro" action="<?php echo base_url('admin/propriedade/insert')?>">
 							<div class="col-md-6">
 								<div class="input-group">
 									<span class="input-group-addon">
@@ -98,7 +98,7 @@
 										<i class="material-icons">person</i>
 									</span>
 									<div class="form-line">
-										<select class="selectpicker" data-live-search="true">
+										<select class="selectpicker" data-live-search="true" name="id_cliente">
 											<?php foreach($clientes as $cliente){?>
 											<option value="<?php echo $cliente->idCliente?>" data-tokens="<?php echo $cliente->nomeCliente?>">
 												<?php echo $cliente->nomeCliente?>
@@ -107,21 +107,48 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-12 text-center">
-									<button type="submit" id="cadastrar" class="btn btn-primary m-t-15 waves-effect">Cadastrar</button>
+							</div>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon">
+										<i class="material-icons">person</i>
+									</span>
+									<div class="form-line">
+										<select class="selectpicker" data-live-search="true" name="id_categoria">
+											<?php foreach($categorias as $categoria){?>
+											<option value="<?php echo $categoria->id?>" data-tokens="<?php echo $categoria->nome?>">
+												<?php echo $categoria->nome?>
+											</option>
+											<?php } ?>
+										</select>
+									</div>
 								</div>
+							</div>
+							<div class="col-md-6">
+								<input type="file" name="img[]" multiple>
+							</div>
+							<div class="col-md-6">
+								<select name="tipo">
+									<option value="1">Sim</option>
+									<option value="0">Não</option>
+								</select>
+							</div>
+							<input type="hidden" name="id" id="id" value="">
+							<div class="col-md-12 text-center">
+								<button type="submit" id="cadastrar" class="btn btn-primary m-t-15 waves-effect">Cadastrar</button>
+							</div>
 						</form>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </section>
 <script type="text/javascript">
 	$(document).ready(function () {
 		var dados = $('#formulario_cadastro').serialize();
 		var options = {
-			url: '<?= base_url(); ?>' + 'index.php/admin/cliente/insert',
+			url: '<?= base_url(); ?>' + 'index.php/admin/propriedade/insert',
 			type: 'POST',
 			data: dados,
 			dataType: 'html',

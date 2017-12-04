@@ -82,22 +82,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-								<div class="input-group">
-									<span class="input-group-addon">
-										<i class="material-icons">person</i>
-									</span>
-									<div class="form-line">
-										<select class="selectpicker" data-live-search="true" name="id_propriedade">
-											<?php foreach($propriedades as $propriedade){?>
-											<option value="<?php echo $propriedade->nome?>" data-tokens="<?php echo $propriedade->nome?>">
-												<?php echo $propriedade->nome?>
-											</option>
-											<?php } ?>
-										</select>
-									</div>
-								</div>
-							</div>
+                        
                         <div class="col-md-12 text-center">
                             <button type="submit" id="cadastrar" class="btn btn-primary m-t-15 waves-effect">Cadastrar</button>
                         </div>
@@ -112,7 +97,7 @@
 $(document).ready(function(){
     var dados = $('#formulario_cadastro').serialize();
     var options = {
-        url: '<?= base_url(); ?>' + 'index.php/admin/cliente/insert',
+        url: '<?= base_url(); ?>' + 'index.php/admin/categoria/insert',
         type: 'POST',
         data: dados,
         dataType: 'html',

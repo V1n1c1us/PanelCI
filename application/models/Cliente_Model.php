@@ -18,7 +18,7 @@ class Cliente_model extends CI_Model {
     }
     
 
-    public function cadastra($nomeCliente, $sobrenome, $email, $telefone, $endereco, $cidade, $cpf){
+    public function cadastra($nomeCliente, $sobrenome, $email, $telefone, $endereco, $cidade, $cpf,$id_propriedade){
          $dados['nomeCliente'] = $nomeCliente; //titulo que vem do fomr na posição título, coluna da tab categoria
          $dados['sobrenome'] = $sobrenome;
          $dados['email'] = $email;
@@ -26,13 +26,14 @@ class Cliente_model extends CI_Model {
          $dados['endereco'] = $endereco;
          $dados['cidade'] = $cidade;
          $dados['cpf'] = $cpf;
+         $dados['id_propriedade'] = $id_propriedade;
          //$dados['img'] = $filePath;
         return $this->db->insert('cliente',$dados); //insere na tabela todos os dados dentro da var $dados
     }
 
     public function listar_clientes()
     {
-        $this->db->select('idCliente,nomeCliente,sobrenome,email,telefone,endereco,cidade,cpf');
+        $this->db->select('idCliente,nomeCliente,sobrenome,email,telefone,endereco,cidade,cpf,id_propriedade');
         $this->db->from('cliente');
         $this->db->order_by('nomeCliente','ASC');
         return $this->db->get()->result();

@@ -11,6 +11,7 @@ class Cliente extends CI_Controller {
         }
 
         $this->load->model('Cliente_Model','modelCliente');
+        $this->load->model('Propriedade_Model','modelPropriedade');
     }
 
     public function index()
@@ -18,7 +19,8 @@ class Cliente extends CI_Controller {
         $dados = array(
             'title' => 'Painel Administrativo',
             'boasVindas' => 'Bem Vindo!',
-            'version' => '1.0.0'
+            'version' => '1.0.0',
+            'propriedades' => $this->modelPropriedade->listar_propriedades()
         );
 
         $this->load->view('backend/template/header', $dados);
@@ -36,8 +38,9 @@ class Cliente extends CI_Controller {
         $endereco = $this->input->post('endereco');
         $cidade = $this->input->post('cidade');
         $cpf = $this->input->post('cpf');
+        $id_propriedade = $this->input->post('id_propriedade');
 
-        $this->modelCliente->cadastra($nomeCliente, $sobrenome, $email, $telefone, $endereco, $cidade, $cpf);
+        $this->modelCliente->cadastra($nomeCliente, $sobrenome, $email, $telefone, $endereco, $cidade, $cpf, $id_propriedade);
 
     }
 

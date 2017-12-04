@@ -19,6 +19,7 @@
 									<th>Telefone</th>
 									<th>Endereço</th>
 									<th>Cidade</th>
+									<th>Propriedade</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -44,6 +45,9 @@
 									</td>
 									<td>
 										<?php echo $cliente->cidade?>
+									</td>
+									<td>
+										<?php echo $cliente->id_propriedade?>
 									</td>
 								</tr>
 								<?php }?>

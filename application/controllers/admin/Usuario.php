@@ -48,10 +48,10 @@ class Usuario extends CI_Controller {
 		$email =$this->input->post('email');
 		$user =$this->input->post('user');
 		$senha =$this->input->post('senha');
-		$foto = $this->UplodAnexo($_FILES['img'],'./uploads/');
+		//$foto = $this->UplodAnexo($_FILES['img'],'./uploads/');
 		//$foto =$this->input->post('userfile');
 
-		$this->modelUsuario->cadastra($nome, $email, $user, $senha, $foto);
+		$this->modelUsuario->cadastra($nome, $email, $user, $senha);
 	}
 	
 	public function listaUsuarios(){
